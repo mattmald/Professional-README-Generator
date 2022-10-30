@@ -23,7 +23,7 @@ inquirer
       {
         type: 'input',
         message: 'Please explain the guidelines for conributions.',
-        name: ' Contribution'
+        name: 'Contribution'
       },
       {
         type: 'input',
@@ -38,34 +38,58 @@ inquirer
     },
     ])
     .then((response) => {
-   var README = `
-  ## Description\n
+   var readMe = `
+
+   ${renderLicenseBadge(response.license)}
+
+  ## Table-of-Contents
+
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  ${renderLicenseSection(response.license)}
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  
+   
+  ## Description(#description)
+
     ${response.Description}
 
 
-  ## Installation\n
+  ## Installation(#installation)
+
     ${response.Installation}
 
 
-  ## Usagen\n
+  ## Usagen(#usage)
+
     ${response.Usage}
 
 
-  ## Contribution\n
+  ## Contribution(#contributing
+
     ${response.Contribution}
 
    
-  ## Test\n
+  ## Test(#tests)
+
     ${response.Test}
 
 
-  ## license\n
+  ## license
+
     ${response.license}`
   
-    fs.writeFile('README.md', README, (err) => err ? console.error(err): console.log('Success!'))
+    fs.writeFile('README.md', readMe, (err) => err ? console.error(err): console.log('Success!'))
     });
 // TODO: Create a function to initialize app
-function init() {}
+function init () {
+// return inquirer.prompt(questions)
+//     .then(readmeData => {
+//         return readmeData;
+//     })
+}
 
 // Function call to initialize app
 init();
