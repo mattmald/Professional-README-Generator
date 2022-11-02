@@ -32,7 +32,7 @@ const renderLicenseSection = (response) => {
    return `
    ## [License](#table-of-contents)
 
-   The application is covered under the following license:
+   The License for this project is:
 
    ${renderLicenseLink(response.license)}
    `; } else {
@@ -43,7 +43,7 @@ const renderLicenseSection = (response) => {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(response) {
  return `
- ${renderLicenseBadge(response)}
+ ${renderLicenseBadge(license)}
 
   ## Table-of-Contents
 
