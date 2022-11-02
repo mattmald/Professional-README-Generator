@@ -8,7 +8,7 @@
   //   }
   //  }
   const renderLicenseBadge = (response) => { 
-    return response.license ? `![badge](https://img.shields.io/npm/l/badge?color=pink&label=License&logo=${response.license}&logoColor=Blue)` : ' '; 
+    return license ? `![badge](https://img.shields.io/npm/l/badge?color=pink&label=License&logo=${license}&logoColor=Blue)` : ' '; 
  }
 
 
@@ -27,30 +27,30 @@ const renderLicenseLink = (license) => {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-// const renderLicenseSection = (response) => {
-//  if (response.license !== 'no license') {
-//    return `
-//    ## [License](#table-of-contents)
+const renderLicenseSection = (response) => {
+ if (response.license !== 'no license') {
+   return `
+   ## [License](#table-of-contents)
 
-//    The application is covered under the following license:
+   The application is covered under the following license:
 
-//    ${renderLicenseLink(response.license)}
-//    `; } else {
-//      return ' ';
-//    }
-//   }
+   ${renderLicenseLink(response.license)}
+   `; } else {
+     return ' ';
+   }
+  }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(response) {
  return `
- ${renderLicenseBadge(license)}
+ ${renderLicenseBadge(response)}
 
   ## Table-of-Contents
 
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
-  ${renderLicenseSection(response.license)}
+  ${renderLicenseSection(license)}
   * [Contributing](#contributing)
   * [Tests](#tests)
   
@@ -83,7 +83,7 @@ function generateMarkdown(response) {
   ## license
 
     ${response.license}
-    ${renderLicenseLink(response.license)}`;
+    ${renderLicenseLink(license)}`;
 }
 
 module.exports = generateMarkdown
