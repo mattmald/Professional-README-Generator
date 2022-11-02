@@ -1,9 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown')
 
-
-inquirer
-  .prompt([
+// inquirer
+//   .prompt(
+    const questions = [
       {
         type: 'input',
         message: 'Please give a discription of your application.',
@@ -12,7 +13,7 @@ inquirer
       
       {
         type: 'input',
-        message: 'How do you recommend userd install your application.',
+        message: 'How do you recommend user install your application.',
         name: 'Installation',
       },
       {
@@ -36,60 +37,23 @@ inquirer
         message: 'Which license will you use for your project?',
         choices: ['agpl', 'apache', 'mit', 'no license']
     },
-    ])
-    .then((response) => {
-   var readMe = `
-
-   ${renderLicenseBadge(response.license)}
-
-  ## Table-of-Contents
-
-  * [Description](#description)
-  * [Installation](#installation)
-  * [Usage](#usage)
-  ${renderLicenseSection(response.license)}
-  * [Contributing](#contributing)
-  * [Tests](#tests)
-  
-   
-  ## Description(#description)
-
-    ${response.Description}
+    ]
+    //)
+    
+    // fs.writeFile('README.md', generateMarkdown, (err) => err ? console.error(err): console.log('Success!'))
+ function userData (file, fileData) {
+  return fs.writeFileSync(file, fileData)
+ }
 
 
-  ## Installation(#installation)
-
-    ${response.Installation}
-
-
-  ## Usagen(#usage)
-
-    ${response.Usage}
-
-
-  ## Contribution(#contributing
-
-    ${response.Contribution}
-
-   
-  ## Test(#tests)
-
-    ${response.Test}
-
-
-  ## license
-
-    ${response.license}`
-  
-    fs.writeFile('README.md', readMe, (err) => err ? console.error(err): console.log('Success!'))
-    });
 // TODO: Create a function to initialize app
 function init () {
-// return inquirer.prompt(questions)
-//     .then(readmeData => {
-//         return readmeData;
-//     })
+return inquirer.prompt(questions)
+    .then(readmeData => {
+        // return readmeData;
+        userData('README.md', generateMarkdown({...readmeData})  )
+    })
 }
 
-// Function call to initialize app
+// // Function call to initialize app
 init();
