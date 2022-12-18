@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown')
 
+//questions that weill show up in terminal
     const questions = [
       {
         type: 'input',
@@ -37,6 +38,7 @@ const generateMarkdown = require('./utils/generateMarkdown')
     },
     ]
   
+    //genertates the Markdown and initialize it as well
  function userData (file, fileData) {
   return fs.writeFileSync(file, fileData)
  }

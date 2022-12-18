@@ -1,15 +1,14 @@
-
+ //makes the badge icon
   const renderLicenseBadge = (license) => { 
     return license ? `![badge](https://img.shields.io/npm/l/badge?color=pink&label=License&logo=${license}&logoColor=Blue)` : ' '; 
  }
 
-
-
+//connects to the offical license page
 const renderLicenseLink = (license) => { 
    return license ? `[${license}](https://choosealicense.com/licenses/${license})` : ' '; 
 }
 
-
+//bring the user to license section
 const renderLicenseSection = (response) => {
  if (response.license !== 'no license') {
    return `
@@ -23,7 +22,7 @@ const renderLicenseSection = (response) => {
    }
   }
 
-
+//layout for the README
 function generateMarkdown(response) {
  return `
  ${renderLicenseBadge(response.license)}
