@@ -1,5 +1,5 @@
 
- ![badge](https://img.shields.io/npm/l/badge?color=pink&label=License&logo=no license&logoColor=Blue)
+ ![badge](https://img.shields.io/npm/l/badge?color=pink&label=License&logo=mit&logoColor=Blue)
 
   ## *Table-of-Contents*
 
@@ -18,22 +18,22 @@
    
   ## Description
 
-    Coding quiz
+    This Application is web text editor that allows the user to create notes and/or code snippets regaurdless if they are connceted to the internet or not. 
 
 
   ## Installation
 
-    Please follow the link provide. 
+    first the user will need to make usre they have al the nessecery downloads and packages to run this apllication then they will need to simply open the terimnal and run the commands listed in the pakcage.json in a apporiate order
 
 
   ## Usage
 
-    This is a very basic quiz created with javascript, html, and css. It's meant to see waht you know about random things. 
+    you can use this application to help take down ideas at any given moment no matter the internet connection!, 
 
 
   ## Contribution
 
-    please give leave your name and a disrcripion of the changes made. 
+    
 
    
   ## Test
@@ -43,5 +43,5 @@
 
   ## license
 
-    no license
-    [no license](https://choosealicense.com/licenses/no license)
+    mit
+    [mit](https://choosealicense.com/licenses/mit)
